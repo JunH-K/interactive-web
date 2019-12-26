@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transition</title>
+  <style>
+    .box-container {
+      display: flex;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      border: 2px solid black;
+      background: rgba(255, 255, 0, 0.7);
+      transition: 1s;
+    }
+
+    .box:hover{
+      transform: scale(2);
+    }
+
+  </style>
+</head>
+<body>
+<h1>CSS transition</h1>
+<p>React는 자바스크립트 라이브러리이며 이는 곧 자바스크립트 언어에 대한 기본 지식이
+  필요하다는 것입니다. 자신감이 부족하시다면 JavaScript 재입문하기 문서를 읽어 더 쉽게
+  따라할 수 있게 하는 걸 권장합니다.
+
+  또한 예제에서 ES6 문법을 종종 사용합니다. 여전히 비교적 새로운 문법이기 때문에 조심히
+  사용하고 있지만, arrow functions, classes, template literals, let, const 문에는
+  익숙해지는 것을 권장합니다. Babel REPL 을 사용해서 ES6 코드가 컴파일 되는 것을
+  볼 수 있습니다.</p>
+<div class="box-container">
+  <div class="box">A</div>
+  <div class="box">B</div>
+  <div class="box">C</div>
+  <div class="box">D</div>
+  <div class="box">E</div>
+</div>
+<p>React는 자바스크립트 라이브러리이며 이는 곧 자바스크립트 언어에 대한 기본 지식이
+  필요하다는 것입니다. 자신감이 부족하시다면 JavaScript 재입문하기 문서를 읽어 더 쉽게
+  따라할 수 있게 하는 걸 권장합니다.
+
+  또한 예제에서 ES6 문법을 종종 사용합니다. 여전히 비교적 새로운 문법이기 때문에 조심히
+  사용하고 있지만, arrow functions, classes, template literals, let, const 문에는
+  익숙해지는 것을 권장합니다. Babel REPL 을 사용해서 ES6 코드가 컴파일 되는 것을
+  볼 수 있습니다.</p>
+</body>
+</html>
