@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/reset.css">
+  <title>ex03</title>
+  <style>
+    .stage {
+      display: flex;
+      justify-content: center; /*축정렬*/
+      align-items: center; /* 축 자체정렬*/
+      width: 100vw;
+      height: 100vh;
+      background: #333;
+      /*perspective:800px*/
+    }
+
+    .door {
+      position: relative;
+      width: 100px;
+      height: 150px;
+    }
+
+    .door-back {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+    }
+
+    .logo {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      left: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-position: 50% 100%; /*center bottom*/
+      background-size: contain;
+      transform: translate3d(100%, 0, 0); /*gpu */
+      /*transition-duration: 0.5s;
+      transition-delay: 0.5s;*/
+      transition: 0.5s 0.5s;
+    }
+
+    .door:nth-child(1) .logo {
+      background-image: url(img/react.png);
+    }
+
+    .door:nth-child(2) .logo {
+      background-image: url(img/js.png);
+    }
+
+    .door:nth-child(3) .logo {
+      background-image: url(img/vue.png);
+    }
+
+    .door-body {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      transform-origin: /*left*/ 0;
+      transition: 0.5s;
+    }
+
+    .door:nth-child(1) .door-body {
+      background: rgba(130, 35, 49, 0.6);
+    }
+
+    .door:nth-child(2) .door-body {
+      background: rgba(66, 96, 255, 0.73);
+    }
+
+    .door:nth-child(3) .door-body {
+      background: rgba(54, 255, 91, 0.79);
+    }
+
+    .door-opened .door-body {
+      transform: perspective(800px) rotateY(-100deg); /*적용 후 3d공간적용-> 회전체에 perspective*/
+    }
+
+    .door-opened .logo {
+      transform: translate3d(0, 0, 0); /*gpu */
+    }
+
+  </style>
+</head>
+<body>
+<div class="stage">
+  <div class="door">
+    <div class="door-back">
+      <div class="logo"></div>
+    </div>
+    <div class="door-body"></div>
+  </div>
+  <div class="door">
+    <div class="door-back">
+      <div class="logo"></div>
+    </div>
+    <div class="door-body"></div>
+  </div>
+  <div class="door">
+    <div class="door-back">
+      <div class="logo"></div>
+    </div>
+    <div class="door-body"></div>
+  </div>
+</div>
+<script>
+  (function () {
+    const stageElem = document.querySelector( '.stage' );
+    let openedDoor;
+
+    stageElem.addEventListener( 'click', (e) => {
+      const { target: { classList, parentNode } } = e;
+
+      openedDoor && openedDoor.classList.remove( 'door-opened' );
+
+      if ( classList.contains( 'door-body' ) ){
+        parentNode.classList.add( 'door-opened' );
+        openedDoor = parentNode;
+      }
+    } );
+  })();
+</script>
+</body>
+</html>
