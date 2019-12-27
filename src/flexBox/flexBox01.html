@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex box layout</title>
+  <style>
+    .container {
+      display: flex;
+      /* 축 정렬*/
+      /*flex-direction: row;!*default *!*/
+      /*justify-content: flex-start;!*default row 축 정렬*!*/
+      /*justify-content: flex-end;*/
+      /*justify-content: center;*/
+      /*justify-content: space-between;*/
+      /*justify-content: space-around;*/
+
+      /*축의 높낮이*/
+      /*align-items: stretch;!*default*!*/
+      /*align-items: start;*/
+      /*align-items: end;*/
+      /*align-items: center;*/
+
+      height: 80vh;
+      background: lightgray;
+    }
+
+    .item {
+      /*flex-grow: 1;!*내부 컨텐츠 여백 비율 , 늘어날때비율*!*/
+      /*flex-basis: auto;!*default 내부컨텐츠 여백속성 설정 *!*/
+      /*flex-basis: 0;!*default 내부컨텐츠 여백속성 설정 *!*/
+      /*flex-shrink: 2;*/
+      flex:1; /*비율 1 */
+      font-size: 1rem;
+      border: 3px solid black;
+      background: white;
+    }
+
+    /*.item:nth-child(1) {*/
+    /*  flex-grow: 1*/
+    /*}*/
+
+    /*.item:nth-child(2) {*/
+    /*  flex-grow: 1*/
+    /*}*/
+
+    /*.item:nth-child(3) {*/
+    /*  flex-grow: 1*/
+    /*}*/
+
+    /*.item:nth-child(4) {*/
+    /*  flex-grow: 1*/
+    /*}*/
+
+    /*.item:nth-child(5) {*/
+    /*  flex-grow: 1*/
+    /*}*/
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="item">1111111111111111111</div>
+  <div class="item">22222222222222222222222</div>
+  <div class="item">33333333333333333</div>
+  <div class="item">4444</div>
+  <div class="item">5555</div>
+</div>
+</body>
+</html>
