@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>이벤트</title>
+  <style>
+    .ani {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<div class="ani"></div>
+
+<script>
+  const aniBall = document.querySelector( '.ani' );
+  let x = 0;
+  let animation;
+
+  function ani() {
+    x += 20;
+    aniBall.style.transform = `translate(${x}px,0)`;
+    if(window.innerWidth < aniBall.getBoundingClientRect().x - aniBall.offsetWidth){
+      console.log('캔슬');
+      cancelAnimationFrame(animation);
+    }else{
+      animation = requestAnimationFrame( ani );
+    }
+  }
+
+
+
+  requestAnimationFrame( ani )
+</script>
+</body>
+</html>
