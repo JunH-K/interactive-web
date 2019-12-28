@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>transition 이벤트</title>
+<!--  <link rel="stylesheet" href="../reset-css/reset.css">-->
+  <style>
+    .ball{
+      position: absolute;
+      top:0;
+      left: 0;
+      width:30px;
+      height:30px;
+      margin: -15px 0 0 -15px;
+      border-radius: 50%;
+      background: red;
+      transition: 1s;
+    }
+
+    .ball.end{
+      background: dodgerblue;
+    }
+  </style>
+</head>
+<body>
+<div class="ball"></div>
+<script>
+  const ball = document.querySelector('.ball');
+  window.addEventListener('click',(e)=>{
+    ball.style.transform = `translate(${e.clientX}px,${e.clientY}px)`
+  });
+
+  // ball.addEventListener('transitionend',(e)=>{
+  //   ball.classList.add('end');
+  //   console.log( e.elapsedTime );//duration
+  //   console.log( e.propertyName );//transition 속성 네임
+  // });
+
+  ball.addEventListener('transitionstart',(e)=>{
+    ball.classList.add('end');
+    console.log( e.elapsedTime );//duration
+    console.log( e.propertyName );//transition 속성 네임
+  });
+</script>
+</body>
+</html>
+
