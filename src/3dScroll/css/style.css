@@ -1,0 +1,62 @@
+body{
+    color:#555;
+    background: #6767ff;
+}
+
+.world{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 1000px;/*3d공간*/
+}
+
+.stage{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;/*내부요소 3d 적용*/
+}
+
+.house{
+    width: 100vw;
+    height: 100vh;
+    transform:translateZ(-490vw);
+    transform-style: preserve-3d;/*내부요소 3d 적용*/
+}
+
+.wall{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.8);
+}
+
+.wall-left{
+    /*left:-500vw;*/
+    width: 1000vw;
+    transform: rotateY(90deg) translateZ(-500vw);
+}
+
+.wall-right{
+    width: 1000vw;
+    transform: rotateY(90deg) translateZ(-400vw);
+}
+
+.wall-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wall-title{
+    font-size: 5rem;
+}
+
+
