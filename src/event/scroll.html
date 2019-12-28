@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>스크롤이벤트</title>
+  <link rel="stylesheet" href="../reset-css/reset.css">
+  <style>
+    .output {
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 0.5rem;
+      width: 100%;
+      font-size: 2rem;
+      font-weight: 200;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .content {
+      height: 1000vh;
+      padding: 20%;
+      background: yellowgreen;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .logo {
+      width: 100px;
+      margin: 20px auto;
+      transition: 1s;
+    }
+
+    .logo.zoom {
+      transform: scale(2);
+    }
+  </style>
+</head>
+<body>
+<div class="output">
+  output
+</div>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi dolores dolorum eos perferendis
+    perspiciatis quia repellendus veniam? Accusantium aperiam blanditiis dolor dolore, inventore nam neque nisi nostrum
+    obcaecati sed?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid commodi dolores dolorum eos perferendis
+    perspiciatis quia repellendus veniam? Accusantium aperiam blanditiis dolor dolore, inventore nam neque nisi nostrum
+    obcaecati sed?
+  </p>
+  <figure class="logo">
+    <img src="img/js.png" alt="javascript">
+  </figure>
+</div>
+
+<script>
+  (function () {
+    const outputElem = document.querySelector( '.output' );
+    const logo = document.querySelector('.logo');
+
+    window.addEventListener( 'scroll', () => {
+      // outputElem.innerHTML = window.pageYOffset;
+       let logoTop = logo.getBoundingClientRect().top;
+      outputElem.innerHTML = logoTop;
+
+      if(window.innerHeight / 5 > logoTop){
+        logo.classList.add('zoom');
+      }else{
+        logo.classList.remove('zoom');
+      }
+
+    } );
+  })()
+</script>
+</body>
+</html>
+
