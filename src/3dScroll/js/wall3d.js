@@ -1,12 +1,16 @@
 (function () {
-  const DEFAULT_Z = -490;
+  const DEFAULT_Z_VALUE = -490;
   const houseElem = document.querySelector( '.house' );
+  const progressBar = document.querySelector( '.progress-bar' );
   let maxScrollValue = getMaxScrollValue();
 
   window.addEventListener( 'scroll', () => {
-    // console.log( pageYOffset ,  maxScrollValue);//스크롤비율
-    const zMove = pageYOffset / maxScrollValue * 970 + DEFAULT_Z;
-    houseElem.style.transform = `translateZ(${ zMove }vw)`;
+    const scrollPer = pageYOffset / maxScrollValue;
+    const zValue = scrollPer * 970 + DEFAULT_Z_VALUE;
+
+    houseElem.style.transform = `translateZ(${ zValue }vw)`;
+    progressBar.style.width = `${ scrollPer * 100 }%`
+
   } );
 
   window.addEventListener( 'resize', () => {
