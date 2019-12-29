@@ -1,5 +1,7 @@
 body{
-    color:#555;
+    height: 500vw;
+    -webkit-overflow-scrolling: touch;
+    color: #555;
     background: #6767ff;
 }
 
