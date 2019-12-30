@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .world {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            perspective: 500px;
+        }
+
+        @keyframes  ani{
+            0%{
+                transform: rotateY(-20deg);
+            }
+            100%{
+                transform: rotateY(20deg);
+            }
+        }
+
+        .panel {
+            width: 200px;
+            height: 250px;
+            background: #6767ff;
+            border-radius: 10px;
+            border: 1px solid black;
+            transform-style: preserve-3d;
+            animation: ani 1s alternate infinite linear;
+        }
+
+        .panel p {
+            padding: 0.5em 0;
+            font-size: 2rem;
+            text-align: center;
+            transform: translateZ(50px);
+        }
+
+    </style>
+    <title>3D</title>
+</head>
+<body>
+<div class="world">
+    <div class="panel">
+        <p>안녕하세요</p>
+        <p>front</p>
+        <p>developer</p>
+    </div>
+</div>
+</body>
+</html>
